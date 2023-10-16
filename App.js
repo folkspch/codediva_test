@@ -4,14 +4,13 @@
  *
  * @format
  */
-
+import SplashScreen from 'react-native-splash-screen'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import {
   StyleSheet,
 } from 'react-native';
-import Splash from './screens/Splash'
 import Welcome from './screens/Welcome'
 import Term from './screens/Term'
 import Login from './screens/Login';
@@ -22,9 +21,12 @@ import VerifyOTP from './screens/VerifyOTP';
 import CreatePIN from './screens/CreatePIN';
 import BiometricSet from './screens/BiometricSet';
 import Signin from './screens/Signin';
-import { NativeBaseProvider, Box } from "native-base";
+import { NativeBaseProvider } from "native-base";
 const Stack = createStackNavigator();
 const App = () => {
+  React.useEffect(() => {
+    SplashScreen.hide();
+  }, []);
   return (
     <NativeBaseProvider>
       <NavigationContainer>
